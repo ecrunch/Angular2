@@ -1,3 +1,17 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
+<span style="display:flex; align-items:initial;">
+<div class="container" style="width:30%">
+    <hr>
+    <h3>Enter a name</h3>
+    <input type="text" name="name" [(ngModel)]="name" />
+    <button (click)="addName()">Add a Name</button>
+</div>
+<div class="container" style="width:70%; padding-left: 1%; ">
+  <hr>
+  <li class="item" *ngFor="let name of names">{{name.name}} {{name._id}}
+      <button (click)="removeName(name._id)">Delete Name</button>
+  </li>
+</div>
+</span>
